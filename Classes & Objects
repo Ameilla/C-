@@ -1,0 +1,44 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+class cars
+{
+private:
+    string company_name;
+    string model_name;
+    string fuel_type;
+    float mileage;
+    double price;
+
+public:
+    void setdata(string cname, string mname, string ftype, float m, double p)
+    {
+        company_name=cname;
+        model_name=mname;
+        fuel_type=ftype;
+        mileage=m;
+        price=p;
+    }
+    void display()
+    {
+        cout<<"car properties"<<endl;
+        cout<<"car company name : "<<company_name<<endl;
+        cout<<"car company model : "<<model_name<<endl;
+        cout<<"car fuel type : "<<fuel_type<<endl;
+        cout<<"car mileage : "<<mileage<<endl;
+        cout<<"car price : "<<price<<endl;
+    }
+};
+
+int main()
+{
+    cars car1,car2;
+    //objects are nothing but variables of type class
+
+    car1.setdata("toyota","altis","petrol",15.5,150000);
+    car1.display();
+    cout<<endl;
+    car2.setdata("Benz","altis","Disel",15.5,150000);
+    car2.display();
+}
