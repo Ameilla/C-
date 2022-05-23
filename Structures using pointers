@@ -1,0 +1,36 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+struct person
+{
+    string name;
+    int age;
+    double salary;
+};
+
+int main()
+{
+    person p1;
+    
+    //......using normal method.....
+    cout<<"Enter details of the person as name, age and salary"<<endl;
+    cin>>p1.name;
+    cin>>p1.age;
+    cin>>p1.salary;
+    cout<<endl<<"Details of the person ";
+    cout<<endl<<"name: "<<p1.name<<endl;
+    cout<<"age: "<<p1.age<<endl;
+    cout<<"salary: "<<p1.salary;
+
+    //......using pointer method.......
+    person *ptr= &p1;
+    cout<<endl<<endl<<"Enter the details of the person"<<endl;
+    cin>>ptr->name;
+    cin>>ptr->age;
+    cin>>ptr->salary;
+    cout<<endl<<"Details of the person"<<endl;
+    cout<<"Name: "<<ptr->name<<endl;
+    cout<<"Age: "<<ptr->age<<endl;
+    cout<<"salary: "<<ptr->salary<<endl;
+}
