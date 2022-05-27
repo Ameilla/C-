@@ -1,0 +1,75 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+class cars
+{
+private:
+    string company_name;
+    string model_name;
+    string fuel_type;
+    float mileage;
+    double price;
+
+public:
+    //constructor without any parameters
+    cars()
+    {
+        cout<<"***Default constructor called***"<<endl;
+    }
+    //parameterised constructor
+    cars(string cname,string mname,string ftype,float m,float p)
+    {
+        cout<<"***parameterized constructor called***"<<endl;
+        company_name=cname;
+        model_name=mname;
+        fuel_type=ftype;
+        mileage=m;
+        price=p;
+    }
+    //copy constructor
+    cars(cars &obj)
+    {
+        cout<<"***Copy constructor called***"<<endl;
+        company_name = obj.company_name;
+        model_name = obj.model_name;
+        fuel_type = obj.fuel_type;
+        mileage = obj.mileage;
+        price = obj.price;
+    }
+    void setdata(string cname,string mname,string ftype,float m,double p)
+    {
+        company_name=cname;
+        model_name=mname;
+        fuel_type=ftype;
+        mileage=m;
+        price=p;
+    }
+    void displaydata()
+    {
+        cout<<"car properties"<<endl;
+        cout<<"car company name: "<<company_name<<endl;
+        cout<<"car company model: "<<model_name<<endl;
+        cout<<"car fuel type: "<<fuel_type<<endl;
+        cout<<"car mileage: "<<mileage<<endl;
+        cout<<"car price: "<<price<<endl<<endl;;
+    }
+    //Destructor
+    ~cars()
+    {
+        cout<<"Destructor called"<<endl;
+    }
+};
+
+int main()
+{
+    cars car1,car2("toyota","fortune","disel",10,350000);
+    car1.setdata("toyota","altis","petrol",15.5,15000000);
+    car1.displaydata();
+    cout<<"***parameterized constructor called***"<<endl;
+    car2.displaydata();
+    cars car3=car1;//copy constructor called
+    car3.displaydata();
+
+}
+
