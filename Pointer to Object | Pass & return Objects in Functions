@@ -1,0 +1,60 @@
+#include<iostream>
+using namespace std;
+
+class ComplexNumber
+{
+private:
+    int real;
+    float imaginary;
+
+public:
+    ComplexNumber()
+    {
+
+    }
+    ComplexNumber(int r,float i)
+    {
+        real = r;
+        imaginary=i;
+    }
+    void displaydata()
+    {
+        cout<<"complex number is: "<<real<<"+"<<imaginary<<"i"<<endl<<endl;
+    }
+    int getRealpart()
+    {
+        return real;
+    }
+    float getImaginarypart()
+    {
+        return imaginary;
+    }
+};
+ComplexNumber add(ComplexNumber n1, ComplexNumber n2)
+{
+    int r;
+    float i;
+    r=n1.getRealpart()+n2.getRealpart();
+    i=n1.getImaginarypart()+n2.getImaginarypart();
+    ComplexNumber temp(r,i);
+    return temp;
+
+}
+
+int main()
+{
+    ComplexNumber comp1(5,4),comp2(2,3),comp3;
+
+    comp1.displaydata();
+    comp2.displaydata();
+
+    comp3=add(comp1,comp2);
+    cout<<"Addition of com1 and com2";
+    comp3.displaydata();
+
+    cout<<"Pointer to Object"<<endl;
+    ComplexNumber *ptr1;
+    ptr1= &comp3;
+    ptr1->displaydata();
+    cout<<ptr1;
+}
